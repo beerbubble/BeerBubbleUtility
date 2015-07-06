@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41AE5EF6-717D-415D-A691-B4B93582861A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeerBubbleUtility</RootNamespace>
+    <AssemblyName>BeerBubbleUtility</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helper\ConvertHelper.cs" />
+    <Compile Include="Helper\EncryptHelper.cs" />
+    <Compile Include="Helper\EnumHelper.cs" />
+    <Compile Include="Helper\FileHelper.cs" />
+    <Compile Include="Helper\IDHelper.cs" />
+    <Compile Include="Helper\LogHepler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CacheService\AspCachingOnRemove.cs" />
+    <Compile Include="Service\CacheService\AspCachingService.cs" />
+    <Compile Include="Service\CacheService\CachingService.cs" />
+    <Compile Include="Service\CacheService\ICachingService.cs" />
+    <Compile Include="Service\ChatService\Easemob\EasemobChatService.cs" />
+    <Compile Include="Service\ChatService\RongCloud\InterfaceUrl.cs" />
+    <Compile Include="Service\ChatService\RongCloud\RongCloudChatService.cs" />
+    <Compile Include="Service\ChatService\RongCloud\RongCloudServer.cs" />
+    <Compile Include="Service\ChatService\RongCloud\RongHttpClient.cs" />
+    <Compile Include="Service\ChatService\RongCloud\RongCloudConfig.cs" />
+    <Compile Include="Service\FileService\FileCommonConfig.cs" />
+    <Compile Include="Service\FileService\FileService.cs" />
+    <Compile Include="Service\ImageService\IImageService.cs" />
+    <Compile Include="Service\ImageService\ImageCommonConfig.cs" />
+    <Compile Include="Service\ImageService\ImageService.cs" />
+    <Compile Include="Service\ImageService\ImageServiceFactory.cs" />
+    <Compile Include="Service\ImageService\UpYun\UpYunConfig.cs" />
+    <Compile Include="Service\ImageService\UpYun\UpYunImageService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service\ChatService\Easemob\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
